@@ -15,7 +15,8 @@ import com.example.plantsdictionary.ui.controls.recyclerview.viewholder.CardView
 import java.util.List;
 
 /**
- * Адаптер для Recycler
+ * Адаптер для Recycler, реализует отрисовку карточек для растений
+ * Плодит CardViewHolder
  *
  * @param <T>
  * @param <Card>
@@ -27,7 +28,7 @@ public class RecyclerCardViewAdapter<T, Card extends CardViewHolder<T>> extends 
      */
     private LiveData<List<T>> list;
     /**
-     * Фрагмент, в котором рабоатем
+     * Передаваемый рабочий фрагмент
      */
     private final Fragment fragment;
     /**
@@ -38,7 +39,7 @@ public class RecyclerCardViewAdapter<T, Card extends CardViewHolder<T>> extends 
      * Конструктор элемента
      */
     private final CardViewConstructor<Card> cardViewConstructor;
-
+//Передача через конструктор
     public RecyclerCardViewAdapter(LiveData<List<T>> list, Fragment fragment, int itemLayout, CardViewConstructor<Card> cardViewConstructor) {
         this.list = list;
         this.fragment = fragment;
@@ -56,8 +57,12 @@ public class RecyclerCardViewAdapter<T, Card extends CardViewHolder<T>> extends 
     @NonNull
     @Override
     public Card onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        //Отрисовка recyclerView
+        //Получение layout и создание view
         View v = LayoutInflater.from(parent.getContext()).inflate(itemLayout, parent, false);
+        //Создание карточки растения на основе переданного view
         Card pvh = cardViewConstructor.getCard(v);
+        //Возврат карточки
         return pvh;
     }
 

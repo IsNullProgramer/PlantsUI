@@ -31,16 +31,21 @@ public class ByFamilyFragment extends Fragment {
 
         /**
          * Отображения списка семейств
+         * Аналогично с цветами: передача модели, ссылки на фрагмент, layout
+         * и фабрика карточек семейств
          */
         RecyclerView recyclerView = root.findViewById(R.id.families);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(new RecyclerCardViewAdapter(byFamilyViewModel.getFamilyViewModel(), this, R.layout.family_item,
                 x -> new FamilyRecyclerViewHolder((x))));
-
+//Поиск, назначение слушателя для изменения текста
         TextView searchTextView = root.findViewById(R.id.search);
-        searchTextView.addTextChangedListener(new TextBinder(byFamilyViewModel.getSearchValue()));
 
+        searchTextView.addTextChangedListener(new TextBinder(byFamilyViewModel.getSearchValue()));
+//Оповещение об изменении
+        //Оповещение recyclerView об обновлении
         byFamilyViewModel.getFamilyViewModel().observe(getViewLifecycleOwner(), x -> recyclerView.getAdapter().notifyDataSetChanged());
+        //Релоад данных (живой поиск)
         byFamilyViewModel.getSearchValue().observe(getViewLifecycleOwner(), x -> byFamilyViewModel.reloadData());
 
         return root;

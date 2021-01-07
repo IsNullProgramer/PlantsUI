@@ -20,6 +20,7 @@ public class HomeViewModel extends ViewModel {
 
     public HomeViewModel() {
         actionViewModels = new MutableLiveData<>();
+        //Оповещение всех через postValue, обращение
         actionViewModels.postValue(IOCFactory.getIContainer().resolve(DataProvider.class).getAllActions().stream()
                 .map(x -> new ActionViewModel(x)).collect(Collectors.toList()));
     }

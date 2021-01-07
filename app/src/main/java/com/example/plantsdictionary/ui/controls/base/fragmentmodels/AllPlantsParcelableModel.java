@@ -14,6 +14,7 @@ import java.util.Optional;
 
 /**
  * Модель для фрагмента с отображением растений
+ * Умеют преобразовать формат, считать и хранят инфу
  */
 public class AllPlantsParcelableModel implements Parcelable, IModelActionSerialize {
 
@@ -93,7 +94,7 @@ public class AllPlantsParcelableModel implements Parcelable, IModelActionSeriali
      */
     @Override
     public void load(List<ActionArguments> argumentsList) {
-
+//Вытаскивание аргументов из actions.json
         Optional<ActionArguments> familyArg = argumentsList.stream().filter(x -> "family".equals(x.getName().toLowerCase())).findFirst();
         Optional<ActionArguments> favoritesArg = argumentsList.stream().filter(x -> "favorites".equals(x.getName().toLowerCase())).findFirst();
 
@@ -104,7 +105,7 @@ public class AllPlantsParcelableModel implements Parcelable, IModelActionSeriali
     }
 
     /**
-     * Загрузка из контекста фрагмента. Немного hardCode
+     * Загрузка из контекста фрагмента.
      *
      * @param context
      * @param bundle

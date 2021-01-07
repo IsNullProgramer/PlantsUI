@@ -59,7 +59,7 @@ public class AllPlantsFragment extends FragmentWithBundleLoadModel<AllPlantsParc
 
         return root;
     }
-
+//Обновление toolbar
     private void updateTitle(String titleAppender) {
         ToolbarActivity toolbarActivity = (ToolbarActivity) getActivity();
         toolbarActivity.updateTitle(toolbarActivity.getToolbarTitle() + " (" + titleAppender + ")");

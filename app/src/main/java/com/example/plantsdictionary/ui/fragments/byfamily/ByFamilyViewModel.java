@@ -30,10 +30,13 @@ public class ByFamilyViewModel extends ViewModel {
      * Перезагрузка данных
      */
     public void reloadData() {
+        //Получение всех растений
         Stream<FamilyPlantViewModel> stream = IOCFactory.getIContainer().resolve(DataProvider.class).getFamilyPlants().stream().map(x -> new FamilyPlantViewModel(x));
+        //Получение поисковой строки и фильтрация через StreamAPI
         String searchText = searchValue.getValue();
         if (searchText != null && searchText.trim().length() != 0)
             stream = stream.filter(x -> x.getTitle().toLowerCase().contains(searchText.toLowerCase()));
+        //Преобразование в List
         familyViewModel.postValue(stream.collect(Collectors.toList()));
     }
 

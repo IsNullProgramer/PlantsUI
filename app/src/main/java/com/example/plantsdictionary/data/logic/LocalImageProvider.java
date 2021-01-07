@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Провайдер изображений из asset
+ * Провайдер изображений из asset, реализует описанный ImagePrivider
  */
 public class LocalImageProvider implements ImageProvider {
 
@@ -23,7 +23,7 @@ public class LocalImageProvider implements ImageProvider {
     }
 
     /**
-     * Загрузка изображения из asset
+     * Загрузка изображения из asset через InputStream и Bitmap Factory
      *
      * @param name
      * @return

@@ -54,20 +54,23 @@ public class ActionRecyclerViewHolder extends CardViewHolder<ActionViewModel> {
         super.click();
 
         ActivityNavigator activityNavigator = (ActivityNavigator) getActivity();
-
+//Bundle состоит из примитивов. Parcelable нужен чтобы засунуть объект в bundle
         Parcelable parcelable = null;
         int parcelableId = 0;
 
         /**
-         * Если есть аргументы, то надо собрать объект модели
+         * Если есть аргументы, то надо собрать объект модели, сложная непонятная штука
+         *
          */
         if (obj.getParcelableClass() != null) {
             IModelActionSerialize iModelActionSerialize = obj.getParcelableClass().newInstance();
+            //Запись аргументов из json
             iModelActionSerialize.load(obj.getActionArguments());
+            //Сохранение как parcelable
             parcelable = (Parcelable) iModelActionSerialize;
             parcelableId = getStringIdByName(obj.getParcelableClassId());
         }
-
+        //Использование parcelable как аргументы для нового фрагмента при навигации
         activityNavigator.navigateTo(getIdByName(obj.getNavigateTo()), parcelableId, parcelable);
     }
 }

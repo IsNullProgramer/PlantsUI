@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
- * Класс для работы с элементами RecyclerView
+ * Класс для работы с элементами RecyclerView, взят откуда от с GitHub давным давно
  *
  * @param <T>
  */

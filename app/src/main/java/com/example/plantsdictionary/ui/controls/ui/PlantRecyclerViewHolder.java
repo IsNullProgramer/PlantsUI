@@ -46,7 +46,9 @@ public class PlantRecyclerViewHolder extends CardViewHolder<PlantViewModel> {
         image.setImageBitmap(IOCFactory.getIContainer().resolve(ImageProvider.class).loadBitmap(obj.getImageName()));
         favorite.setImageResource(obj.isFavorite() ? R.drawable.ic_favorite_active : R.drawable.ic_favorite);
     }
-
+//При клике на модель передать в другой фрагмент parcelable с растением
+    //Вызывается создание PlantParcelableModel с передачей id для фрагмента отображеия растения
+    //Т.е. Чтобы знать, инфо о каком растении нам надо отобразить
     @Override
     public void click() throws IllegalAccessException, InstantiationException {
         super.click();

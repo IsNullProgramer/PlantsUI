@@ -7,7 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 /**
- * Фрагмент с моделью
+ * Хранение модели в фрагменте, нужно для работы навигации
+ * Передаётся при клике на плитку
  * @param <T>
  */
 public class FragmentWithModel<T extends Parcelable> extends Fragment {

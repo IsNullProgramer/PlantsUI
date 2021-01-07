@@ -19,12 +19,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Проводник для JSON
+ * Провайдер для JSON
  */
 public class JsonProvider implements DataProvider {
 
     /**
-     * Контекст приложения
+     * Контекст приложения для доступа к его элементам
      */
     private Context context;
 
@@ -33,7 +33,7 @@ public class JsonProvider implements DataProvider {
      */
     private List<Action> actionCache;
     private List<Plants> plantCache;
-
+//Передача контекста через конструктор
     public JsonProvider(Context context) {
         this.context = context;
     }
@@ -81,6 +81,8 @@ public class JsonProvider implements DataProvider {
         return actionCache;
     }
 
+    //Пустые реализации, поскольку в json нет информации об избранных растениях
+    //Поскольку эти данные хранятся в базе
     @Override
     public boolean isFavoritesExists(int plantId) {
         return false;

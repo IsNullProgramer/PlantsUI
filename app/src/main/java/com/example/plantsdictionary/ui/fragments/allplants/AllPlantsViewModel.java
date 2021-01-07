@@ -47,7 +47,7 @@ public class AllPlantsViewModel extends ViewModel {
     public void addFilter(Predicate<PlantViewModel> plantViewModelPredicate) {
         filters.add(plantViewModelPredicate);
     }
-
+//поиск в избранных
     public void reloadData() {
         Stream<PlantViewModel> stream = dataProvider.getAllPlants().stream()
                 .map(plants -> new PlantViewModel(this, plants, dataProvider.isFavoritesExists(plants.getId())));
@@ -58,7 +58,7 @@ public class AllPlantsViewModel extends ViewModel {
             stream = stream.filter(predicate);
         plantsViewModel.postValue(stream.collect(Collectors.toList()));
     }
-
+//get'ы для наблюдателей
     public MutableLiveData<List<PlantViewModel>> getPlantsViewModel() {
         return plantsViewModel;
     }

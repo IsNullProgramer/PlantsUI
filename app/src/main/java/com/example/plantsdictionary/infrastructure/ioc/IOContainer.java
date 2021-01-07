@@ -4,16 +4,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * HardCode контейнер. Singleton
+ * HardCode контейнер. Singleton,
+ * фабрика его вернёт,
+ * если он созданный, будет возвращён созданный экземпляр
  */
 public class IOContainer implements IContainer {
-    private static IOContainer ioContainer;
+
 
     public IOContainer() {
     }
 
     /**
      * Map для хранения реализации
+     * Удобно обращаться к компонентам программы
+     * Поставка всех данных в единичном экземпляре
      */
     private Map<Class, Object> memoryHardContainer = new HashMap<>();
 

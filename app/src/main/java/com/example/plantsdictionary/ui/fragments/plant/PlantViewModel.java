@@ -25,13 +25,16 @@ public class PlantViewModel extends ViewModel {
     public MutableLiveData<com.example.plantsdictionary.ui.controls.ui.models.PlantViewModel> getPlantViewModelMutableLiveData() {
         return plantViewModelMutableLiveData;
     }
-
+//Получение акутальных данных
     public void setFavorite() {
         com.example.plantsdictionary.ui.controls.ui.models.PlantViewModel plantViewModel = plantViewModelMutableLiveData.getValue();
+        //Если мы нажали на уже избранное, происходит удаление
         if (plantViewModel.isFavorite())
             dataProvider.deleteFavorite(plantViewModel.getId());
         else
+            //Если такого растения в избранных нет, добавляем
             dataProvider.insertFavorite(new Favorite(plantViewModel.getId()));
+        //Перезагрузка избранных
         loadPlantById(plantViewModel.getId());
     }
 }

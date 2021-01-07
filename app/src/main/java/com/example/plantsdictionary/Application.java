@@ -23,6 +23,8 @@ public class Application extends android.app.Application {
 
         /**
          * Создадим и заполним контейнер
+         * Регистрация провайдеров json и картинок + БД
+         * В дальнейшем через этот контейнер можно будет образаться к сервисам и данным
          */
         IContainer ioContainer = IOCFactory.getIContainer();
         ioContainer.register(DataProvider.class, new ComplexDataProvider(new JsonProvider(this),

@@ -7,7 +7,7 @@ import androidx.room.Query;
 import com.example.plantsdictionary.data.models.Favorite;
 
 /**
- * Объект доступа к избранному
+ * Объект доступа к базе данных SQLite со списком избранных растений
  */
 @Dao
 public interface DaoFavorites {

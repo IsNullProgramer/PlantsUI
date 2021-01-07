@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements ActivityNavigator
      * Тулбар
      */
     private Toolbar toolbar;
-
+//Создание
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements ActivityNavigator
      *
      * @param layoutId
      */
+    //Переключение между фрагментами: смена id фрагмента
     @Override
     public void navigateTo(int layoutId) {
         navController.navigate(layoutId);
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements ActivityNavigator
      * @param parcelable
      */
     @Override
+    //Parcelable для передачи объектов между фрагментами
     public void navigateTo(int layoutId, int id, Parcelable parcelable) {
         Bundle bundle = new Bundle();
         if (parcelable != null && id > 0)

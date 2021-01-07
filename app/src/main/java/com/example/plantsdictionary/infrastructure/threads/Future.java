@@ -17,17 +17,20 @@ public class Future<T> extends Thread {
 
     public Future(ThreadResult<T> threadResult) {
         this.threadResult = threadResult;
+        //Старт нового потока
         this.start();
     }
 
     @Override
     public void run() {
+        //Выполнение в новом потоке
         super.run();
         result = threadResult.get();
     }
 
     /**
      * Дождемся завершения и вернем результат
+     * Получение реузльтата из другого потока
      * @return
      */
     public T get() {
