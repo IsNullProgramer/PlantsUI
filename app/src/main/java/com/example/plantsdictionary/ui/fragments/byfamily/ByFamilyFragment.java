@@ -34,12 +34,12 @@ public class ByFamilyFragment extends Fragment {
          * Аналогично с цветами: передача модели, ссылки на фрагмент, layout
          * и фабрика карточек семейств
          */
-        RecyclerView recyclerView = root.findViewById(R.id.families);
+        RecyclerView recyclerView = root.findViewById(R.id.familiesRecyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(new RecyclerCardViewAdapter(byFamilyViewModel.getFamilyViewModel(), this, R.layout.family_item,
                 x -> new FamilyRecyclerViewHolder((x))));
 //Поиск, назначение слушателя для изменения текста
-        TextView searchTextView = root.findViewById(R.id.search);
+        TextView searchTextView = root.findViewById(R.id.searchEditText);
 
         searchTextView.addTextChangedListener(new TextBinder(byFamilyViewModel.getSearchValue()));
 //Оповещение об изменении

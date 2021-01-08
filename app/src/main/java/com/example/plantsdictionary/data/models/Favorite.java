@@ -32,7 +32,4 @@ public class Favorite {
         return plant;
     }
 
-    public void setPlant(int plant) {
-        this.plant = plant;
-    }
 }

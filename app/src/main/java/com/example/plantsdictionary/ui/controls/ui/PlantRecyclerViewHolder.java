@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 
 import com.example.plantsdictionary.R;
 import com.example.plantsdictionary.infrastructure.ioc.IOCFactory;
-import com.example.plantsdictionary.infrastructure.ioc.IOContainer;
 import com.example.plantsdictionary.interfaces.ImageProvider;
 import com.example.plantsdictionary.ui.controls.base.fragmentmodels.PlantParcelableModel;
 import com.example.plantsdictionary.ui.controls.recyclerview.viewholder.CardViewHolder;
@@ -29,10 +28,10 @@ public class PlantRecyclerViewHolder extends CardViewHolder<PlantViewModel> {
     public PlantRecyclerViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        title = itemView.findViewById(R.id.title);
-        family = itemView.findViewById(R.id.family);
-        image = itemView.findViewById(R.id.image);
-        favorite = itemView.findViewById(R.id.favorite);
+        title = itemView.findViewById(R.id.titleTextView);
+        family = itemView.findViewById(R.id.familyTextView);
+        image = itemView.findViewById(R.id.plantImageView);
+        favorite = itemView.findViewById(R.id.favoriteImageView);
 
         favorite.setOnClickListener(v -> obj.setFavorite(!obj.isFavorite()));
     }

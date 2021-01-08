@@ -32,7 +32,7 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 //Создание RecyclerView
          //Вытащить RecyclerView
-        final RecyclerView actionRecyclerView = root.findViewById(R.id.actions);
+        final RecyclerView actionRecyclerView = root.findViewById(R.id.actionsRecyclerView);
         //Создание таблицы с 2 колонками и неограниченным количеством строк
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
         actionRecyclerView.setLayoutManager(gridLayoutManager);

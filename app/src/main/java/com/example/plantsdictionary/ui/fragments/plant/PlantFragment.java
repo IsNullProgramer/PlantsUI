@@ -14,7 +14,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.plantsdictionary.R;
 import com.example.plantsdictionary.infrastructure.ioc.IOCFactory;
-import com.example.plantsdictionary.infrastructure.ioc.IOContainer;
 import com.example.plantsdictionary.interfaces.ImageProvider;
 import com.example.plantsdictionary.ui.controls.base.FragmentWithModel;
 import com.example.plantsdictionary.ui.controls.base.fragmentmodels.PlantParcelableModel;
@@ -41,12 +40,12 @@ public class PlantFragment extends FragmentWithModel<PlantParcelableModel> {
         plantViewModel = new ViewModelProvider(this).get(PlantViewModel.class);
         View root = inflater.inflate(R.layout.fragment_plant, container, false);
 //Получение TextView для отображения инфо о растении
-        TextView title = root.findViewById(R.id.title);
-        TextView family = root.findViewById(R.id.family);
-        TextView description = root.findViewById(R.id.description);
+        TextView title = root.findViewById(R.id.titleTextView);
+        TextView family = root.findViewById(R.id.familyTextView);
+        TextView description = root.findViewById(R.id.descriptionTextView);
 //Вытащить картинку для растения
-        ImageView favorite = root.findViewById(R.id.favorite);
-        ImageView image = root.findViewById(R.id.image);
+        ImageView favorite = root.findViewById(R.id.favoriteImageView);
+        ImageView image = root.findViewById(R.id.plantImageView);
 
         ImageProvider imageProvider = IOCFactory.getIContainer().resolve(ImageProvider.class);
 //Выставление данных при изменении,

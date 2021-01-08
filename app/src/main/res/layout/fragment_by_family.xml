@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/search"
+            android:id="@+id/searchEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Поиск"
@@ -20,7 +20,7 @@
             android:lines="1"></EditText>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/families"
+            android:id="@+id/familiesRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10px"></androidx.recyclerview.widget.RecyclerView>

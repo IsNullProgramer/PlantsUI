@@ -26,8 +26,8 @@ public class FamilyRecyclerViewHolder extends CardViewHolder<FamilyPlantViewMode
     public FamilyRecyclerViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        title = itemView.findViewById(R.id.title);
-        image = itemView.findViewById(R.id.image);
+        title = itemView.findViewById(R.id.titleTextView);
+        image = itemView.findViewById(R.id.plantImageView);
     }
 
     @Override

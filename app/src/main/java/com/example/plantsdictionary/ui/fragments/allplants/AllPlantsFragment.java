@@ -39,7 +39,7 @@ public class AllPlantsFragment extends FragmentWithBundleLoadModel<AllPlantsParc
         View root = inflater.inflate(R.layout.fragment_all_plants, container, false);
 
         // Компонент отображения списка
-        RecyclerView recyclerView = root.findViewById(R.id.plants);
+        RecyclerView recyclerView = root.findViewById(R.id.plantsRecyclerView);
         // Отображаем 2мя колонками
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false));
         // Установим привязку к данным
@@ -47,7 +47,7 @@ public class AllPlantsFragment extends FragmentWithBundleLoadModel<AllPlantsParc
                 x -> new PlantRecyclerViewHolder(x)));
 
         // Поиск
-        EditText searchEditText = root.findViewById(R.id.search);
+        EditText searchEditText = root.findViewById(R.id.searchEditText);
         searchEditText.addTextChangedListener(new TextBinder(allPlantsViewModel.getSearchValue()));
 
         // При изменении поиска и списка должны происходить изменения компонентов
