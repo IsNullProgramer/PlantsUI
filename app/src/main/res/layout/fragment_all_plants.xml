@@ -15,14 +15,18 @@
             android:id="@+id/searchEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Поиск"
+            android:hint="@string/hint"
             android:inputType="textFilter"
-            android:lines="1"></EditText>
+            android:lines="1">
+
+        </EditText>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/plantsRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
         
     </LinearLayout>
 

@@ -47,7 +47,7 @@ public class AllPlantsViewModel extends ViewModel {
     public void addFilter(Predicate<PlantViewModel> plantViewModelPredicate) {
         filters.add(plantViewModelPredicate);
     }
-//поиск в избранных
+//поиск
     public void reloadData() {
         Stream<PlantViewModel> stream = dataProvider.getAllPlants().stream()
                 .map(plants -> new PlantViewModel(this, plants, dataProvider.isFavoritesExists(plants.getId())));

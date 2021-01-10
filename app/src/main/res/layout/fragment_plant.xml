@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.plant.PlantFragment">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -29,14 +29,18 @@
                     <ImageView
                         android:id="@+id/favoriteImageView"
                         android:layout_width="@dimen/favroite_dim"
-                        android:layout_height="@dimen/favroite_dim"></ImageView>
+                        android:layout_height="@dimen/favroite_dim">
+
+                    </ImageView>
 
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/plantImageView"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/main_image_plant_dim"></ImageView>
+                    android:layout_height="@dimen/main_image_plant_dim">
+
+                </ImageView>
 
                 <TextView
                     android:id="@+id/titleTextView"
@@ -44,22 +48,33 @@
                     android:layout_height="wrap_content"
                     android:text="Title"
                     android:textAlignment="center"
-                    android:textSize="12pt"></TextView>
+                    android:textSize="@dimen/textSize">
+
+                </TextView>
 
                 <TextView
                     android:id="@+id/familyTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10px"
-                    android:text="Family"></TextView>
+                    android:padding="@dimen/padding"
+                    android:text="Family">
 
+                </TextView>
+
+                <ScrollView
+                    android:id="@+id/SCROLLER_ID"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="vertical"
+                    android:fillViewport="true">
                 <TextView
                     android:id="@+id/descriptionTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10px"
-                    android:text="Description"></TextView>
-
+                    android:padding="@dimen/padding"
+                    android:text="Description">
+                </TextView>
+                </ScrollView>
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>

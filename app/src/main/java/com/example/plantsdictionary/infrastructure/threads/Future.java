@@ -5,7 +5,6 @@ package com.example.plantsdictionary.infrastructure.threads;
  * @param <T>
  */
 public class Future<T> extends Thread {
-
     /**
      * Код делегата
      */
@@ -14,7 +13,6 @@ public class Future<T> extends Thread {
      * Результат
      */
     T result;
-
     public Future(ThreadResult<T> threadResult) {
         this.threadResult = threadResult;
         //Старт нового потока

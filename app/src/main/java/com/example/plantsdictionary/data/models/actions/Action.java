@@ -41,15 +41,9 @@ public class Action {
         return parcelableClassId;
     }
 
-    public void setParcelableClassId(String parcelableClassId) {
-        this.parcelableClassId = parcelableClassId;
-    }
 
-    public String getParcelableClass() {
-        return parcelableClass;
-    }
 
-    public void setParcelableClass(String parcelableClass) {
+   public void setParcelableClass(String parcelableClass) {
         this.parcelableClass = parcelableClass;
     }
 
@@ -57,42 +51,26 @@ public class Action {
         return image;
     }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getCaption() {
         return caption;
     }
 
-    public void setCaption(String caption) {
-        this.caption = caption;
-    }
-
     public String getNavigateTo() {
         return navigateTo;
     }
 
-    public void setNavigateTo(String navigateTo) {
-        this.navigateTo = navigateTo;
-    }
 
     public List<ActionArguments> getActionArguments() {
         return actionArguments;
     }
 
-    public void setActionArguments(List<ActionArguments> actionArguments) {
-        this.actionArguments = actionArguments;
-    }
 
+//ОПределить класс модели при переходе
     public Class<IModelActionSerialize> getParcelableRuntimeClass() throws ClassNotFoundException {
         if (parcelableClass == null)
             return null;

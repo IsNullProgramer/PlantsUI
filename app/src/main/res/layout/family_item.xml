@@ -23,7 +23,8 @@
                 android:layout_height="wrap_content"
                 android:text="Title"
                 android:textAlignment="center"
-                android:textSize="12pt"></TextView>
+                android:textSize="@dimen/textSize">
+            </TextView>
 
         </LinearLayout>
 

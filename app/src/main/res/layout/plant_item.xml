@@ -23,14 +23,18 @@
                 <ImageView
                     android:id="@+id/favoriteImageView"
                     android:layout_width="@dimen/favroite_dim"
-                    android:layout_height="@dimen/favroite_dim"></ImageView>
+                    android:layout_height="@dimen/favroite_dim">
+
+                </ImageView>
 
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/plantImageView"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/main_image_plant_dim"></ImageView>
+                android:layout_height="@dimen/main_image_plant_dim">
+
+            </ImageView>
 
             <TextView
                 android:id="@+id/titleTextView"
@@ -38,14 +42,18 @@
                 android:layout_height="wrap_content"
                 android:text="Title"
                 android:textAlignment="center"
-                android:textSize="12pt"></TextView>
+                android:textSize="@dimen/textSize">
+
+            </TextView>
 
             <TextView
                 android:id="@+id/familyTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10px"
-                android:text="Family"></TextView>
+                android:padding="@dimen/padding"
+                android:text="Family">
+
+            </TextView>
 
         </LinearLayout>
 

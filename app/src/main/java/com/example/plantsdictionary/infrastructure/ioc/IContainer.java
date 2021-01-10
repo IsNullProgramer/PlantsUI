@@ -1,7 +1,7 @@
 package com.example.plantsdictionary.infrastructure.ioc;
 
 /**
- * Самописный контейнер. Дальше мигрировать на существующий. Заглушка для слоя контейнера
+ * Самописный контейнер.
  */
 public interface IContainer {
     /**
@@ -16,9 +16,8 @@ public interface IContainer {
      * Зарегистрировать класс
      * @param i
      * @param obj
-     * @param scopeType
      * @param <I>
      * @param <T>
      */
-    <I, T> void register(Class<I> i, T obj, ScopeType scopeType);
+    <I, T> void register(Class<I> i, T obj);
 }

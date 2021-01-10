@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
         //Задание адаптера: создание адаптера с передачей actions, ссылки на фрагмент
         //Задание layout для recyclerView, задание фабрики: возврат actionrecyclerviewholder для view
         actionRecyclerView.setAdapter(new RecyclerCardViewAdapter(homeViewModel.getActionViewModels(), this, R.layout.action_item,
-                view -> new ActionRecyclerViewHolder(view)));
+                ActionRecyclerViewHolder::new));
 //Привязка наблюдателя к действию: обращаемся к recyclerView, получаем адаптер, сообщаем адаптеру, что необходимо перечитать данные
         //Триггер перерисовки карточек
         homeViewModel.getActionViewModels().observe(getViewLifecycleOwner(), actionViewModels -> actionRecyclerView.getAdapter().notifyDataSetChanged());

@@ -59,8 +59,8 @@ public class ActionRecyclerViewHolder extends CardViewHolder<ActionViewModel> {
         int parcelableId = 0;
 
         /**
-         * Если есть аргументы, то надо собрать объект модели, сложная непонятная штука
-         *
+         * Если есть аргументы, то надо собрать объект модели,
+         * Здесь описывается модель карточек для главного экрана
          */
         if (obj.getParcelableClass() != null) {
             IModelActionSerialize iModelActionSerialize = obj.getParcelableClass().newInstance();
@@ -70,7 +70,7 @@ public class ActionRecyclerViewHolder extends CardViewHolder<ActionViewModel> {
             parcelable = (Parcelable) iModelActionSerialize;
             parcelableId = getStringIdByName(obj.getParcelableClassId());
         }
-        //Использование parcelable как аргументы для нового фрагмента при навигации
+        //Использование parcelable как аргумента для нового фрагмента при навигации
         activityNavigator.navigateTo(getIdByName(obj.getNavigateTo()), parcelableId, parcelable);
     }
 }
